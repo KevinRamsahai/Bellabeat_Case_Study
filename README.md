@@ -75,9 +75,9 @@ hourly_calories %>% select(Calories) %>% summary()
 sleep %>% select(TotalTimeInBed, TotalMinutesAsleep) %>% summary()
 ```
 
-![Alt text](<Screenshot 2023-09-29 184636activity-1.jpg>)
-![Alt text](calories-1.jpg)
-![Alt text](<Screenshot 2023-09-22 212453.jpg>)
+![Screenshot 2023-09-29 184636activity-1](https://github.com/KevinRamsahai/Bellabeat_Case_Study/assets/131219036/59467e4e-b89d-41af-bd62-0b97b98be89b)
+![calories](https://github.com/KevinRamsahai/Bellabeat_Case_Study/assets/131219036/e786a59c-9db2-4614-b724-6e07382994f6)
+![Screenshot 2023-09-22 212453](https://github.com/KevinRamsahai/Bellabeat_Case_Study/assets/131219036/ea7ab464-cd92-48ec-a6a8-498df3b8e2c2)
 
 Some important information I've collected from these statistics:
 - The total daily steps that the average person takes is 7638. 
@@ -98,7 +98,7 @@ Next, I made a scatter plot of daily steps vs. calories to see if there are any 
 activity %>% ggplot(aes(x = TotalSteps, y = Calories)) + geom_point(aes(color = weekend_or_weekday)) + 
   geom_smooth() +ggtitle("Daily Steps and Calories") + xlab("Total Steps") + labs(color='Weekend or Weekday')
 ```
-![Alt text](<daily steps and calories-1.png>)
+![daily steps and calories-1](https://github.com/KevinRamsahai/Bellabeat_Case_Study/assets/131219036/f46a8683-53fb-4ddf-9bb0-90c88c7fb62f)
 The next few graphs show the relationship between each category of activeness and calories burned. It seems like having very high active minutes correlates the best with calories burned.
 ```
 activity %>% ggplot(aes(x = VeryActiveMinutes, y = Calories)) + geom_point(color ="#A8D6D2") + geom_smooth() +
@@ -113,7 +113,10 @@ activity %>% ggplot(aes(x = LightlyActiveMinutes, y = Calories)) + geom_point(co
 activity %>% ggplot(aes(x = SedentaryMinutes, y = Calories)) + geom_point(color ="#FE6E40") + geom_smooth() +
   ggtitle("Sedentary Active Minutes and Calories") + xlab("Sedentary Active Minutes")
 ```
-![Alt text](VeryActive-1.png)![Alt text](FairlyActive-1.png)![Alt text](lighltyactive-1.png)![Alt text](sedentery-1.png)
+![VeryActive](https://github.com/KevinRamsahai/Bellabeat_Case_Study/assets/131219036/42e13e23-e724-43a2-98ab-7ccc937534d8)
+![FairlyActive](https://github.com/KevinRamsahai/Bellabeat_Case_Study/assets/131219036/7a7dfe2d-39c1-4df1-ad88-20de588f1790)
+![lighltyactive](https://github.com/KevinRamsahai/Bellabeat_Case_Study/assets/131219036/c304ca22-293c-41a1-b285-ef6741fa4a2d)
+![sedentery](https://github.com/KevinRamsahai/Bellabeat_Case_Study/assets/131219036/b5e0df21-afb1-4a54-85bc-f4f789bda35f)
 
 This line graph shows at which hours people burn the most calories on average. There is a huge dip at around 3-4 pm. 
 ```
@@ -126,7 +129,7 @@ ggplot(hourly_calories_line, aes(x = hour, y= avg_cal)) +
   geom_line(linewidth = 1) + xlab("Hour") + ylab("Average Calories Burned") + 
   ggtitle("Average Calories Burned at Different Hours") + scale_x_continuous(breaks=seq(0,23,by=1))
 ```
-![Alt text](<line calories-1.png>)
+![line calories](https://github.com/KevinRamsahai/Bellabeat_Case_Study/assets/131219036/d083661b-4e78-43d9-99e0-2e9f7bb7be91)
 The bar graph shows which days people got the most sleep 
 ```
 sleep_avg <- sleep %>% group_by(day_of_week) %>% summarise(avg_mins_asleep = mean(TotalMinutesAsleep),
@@ -137,7 +140,7 @@ sleep_avg$day_of_week <- factor(sleep_avg$day_of_week, levels =
 sleep_avg %>% ggplot(aes(x = day_of_week, y = avg_mins_asleep)) + geom_col(fill = "#7B68EE") +
   ggtitle("Daily Amount of Sleep ") + xlab("Day of Week") + ylab("Average Minutes Asleep")
 ```
-![Alt text](Rplot02-1.png)
+![Rplot02-1](https://github.com/KevinRamsahai/Bellabeat_Case_Study/assets/131219036/2af0cf51-8f9c-48e1-839d-26e13abfb624)
 ## Act 
 To summarize my process so far, I first started by identifying the business task, prepared and verified the data, process and cleaned the data and finally analyzed and visuialized the data.  
 
